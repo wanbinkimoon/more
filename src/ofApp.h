@@ -20,5 +20,17 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
+
+		// Audio 
+		float smoothedVol;
+		float scaledVol = 0;
+		vector <float> volHistory;
+		vector <float> mono;
+
+		void audioIn(ofSoundBuffer &input);
+		void audioSetup();
+		void audioUpdate();
+		void audioLineDraw();
+		void audioPanelSetup();
+    ofSoundStream soundStream;
 };
