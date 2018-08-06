@@ -68,7 +68,7 @@ void ofApp::audioUpdate(){
 void ofApp::audioLineDraw(){
 	
 	ofSetLineWidth(3);
-	int lines = 8;
+	int lines = 2000;
 	for (int i = 1; i < lines; ++i){
 		ofBeginShape();
 		float step = 10;
@@ -76,7 +76,7 @@ void ofApp::audioLineDraw(){
 		float maxRange = ofGetHeight() / 2;
 		float diff = ofMap(range, step, step * lines, 0, maxRange);
 
-		ofSetColor(245 + i, 58 + (i * 2), 135 + i); ofNoFill();	
+		ofSetColor((245 + i) % 255, (58 + (i * 2)) % 255, (135 + i) % 255); ofNoFill();	
 		
 		for (unsigned int j = 0; j < mono.size(); j++){
 			float x = ofMap(j, 0, mono.size(), 0, ofGetWidth());
